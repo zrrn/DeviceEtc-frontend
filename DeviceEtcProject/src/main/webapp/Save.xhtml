@@ -1,0 +1,69 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<body>
+		<ui:define name="content">
+
+				<div style="border-top: 2px">
+					<h:panel id="addDevice_pnl" style="width:100%;">
+						<h:panelGrid columns="2" style="width:100%">
+
+							<h:outputLabel value="Name" />
+							<h:inputText autocomplete="off" id="name"
+								value="#{DeviceBean.device.name}"
+								style="width:100%" />
+
+
+							<h:outputLabel value="Description" />
+							<h:inputText autocomplete="off" id="description"
+								value="#{DeviceBean.device.description}"
+								style="width:100%" />
+								
+								
+							<h:outputLabel value="Longitude" />
+							<h:inputText autocomplete="off" id="longitude"
+								value="#{DeviceBean.device.longitude}"
+								style="width:100%" />
+								
+							<h:outputLabel value="Altitude" />
+							<h:inputText autocomplete="off" id="altitude"
+								value="#{DeviceBean.device.altitude}"
+								style="width:100%" />
+								
+								
+							<h:outputLabel value="Period" />
+							<h:inputText autocomplete="off" id="period"
+								value="#{DeviceBean.device.period}"
+								style="width:100%" />
+								
+							<h:outputLabel value="Distance" />
+							<h:inputText autocomplete="off" id="distance"
+								value="#{DeviceBean.device.distance}"
+								style="width:100%" />
+
+
+							<div class="singleLine">
+								<h:commandButton value="Save" style="    margin-left: 85%;"
+									actionListener="#{Bean_DataQualityQueryScreen.saveDevice()}"
+								>
+								</h:commandButton>
+							</div>
+						</h:panelGrid>
+
+					</h:panel>
+
+				</div>
+
+
+
+
+		</ui:define>
+	</body>
+</ui:composition>
+
+
+
+

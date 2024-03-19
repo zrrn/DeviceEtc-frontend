@@ -1,0 +1,67 @@
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<body>
+		<ui:define name="content">
+			<h:form>
+				<div style="border-top: 2px solid #ccc;">
+					<h:dataTable id="deviceListId" var="data"
+						value="#{DeviceBean.devicelist}" >
+
+						<h:column selectionMode="single"
+							style="width:16px;text-align:center" />
+						<f:facet name="header">  Cihaz listesi 
+				     	</f:facet>
+						<h:column >
+						   <f:facet name = "header">Id</f:facet>
+                              #{data.id}
+						</h:column>
+						<h:column >
+						   <f:facet name = "header">Name</f:facet>
+                              #{data.name}
+							<h:outputText value="#{data.name}" />
+						</h:column>
+						<h:column >
+						   <f:facet name = "header">Description</f:facet>
+                             #{data.description}
+						</h:column>
+						<h:column >
+						   <f:facet name = "header">Longitude</f:facet>
+                             #{data.longitude}
+						</h:column>
+						<h:column headerText="Altitude">
+						   <f:facet name = "header">Altitude</f:facet>
+                              #{data.altitude}
+						</h:column>
+						<h:column headerText="Period">
+						   <f:facet name = "header">Period</f:facet>
+                              #{data.period}
+						</h:column>
+						<h:column headerText="Distance" sortable="true"
+							filterMatchMode="contains">
+						   <f:facet name = "header">Distance</f:facet>
+                             #{data.distance}
+						</h:column>
+
+						<h:column style="width:32px;text-align: center">
+							<h:commandButton actionListener="#{DeviceBean.deleteDevice()}"
+								value="Delete" title="delete" >
+							</h:commandButton>
+						</h:column>
+					</h:dataTable>
+				</div>
+			</h:form>
+
+
+
+
+		</ui:define>
+	</body>
+</ui:composition>
+
+
+
+
